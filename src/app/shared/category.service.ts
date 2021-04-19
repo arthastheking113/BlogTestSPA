@@ -11,14 +11,14 @@ export class CategoryService {
   readonly baseUrl = 'https://duylanle-blog.herokuapp.com/Category';
 
   list:Category[];
-  getCategory(){
-    this.http.get(`${this.baseUrl}/getcategory`)
+  async getCategory(){
+    return await this.http.get(`${this.baseUrl}/getcategory`)
     .toPromise()
     .then(res => this.list = res as Category[]);
   }
 
-  getCategoryPost(){
-    this.http.get(`${this.baseUrl}/getcategory`)
+  async getCategoryPost(){
+    return await this.http.get(`${this.baseUrl}/getcategory`)
     .toPromise()
     .then(res => this.list = res as Category[]);
   }

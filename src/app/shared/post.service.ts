@@ -20,7 +20,7 @@ export class PostService {
   pageOfItems: Array<any>;
 
   
-  getpost(){
+  async getpost(){
     // const postsObserver = {
     //   next: (x: any) => {
     //     this.listPosts = x;
@@ -29,24 +29,24 @@ export class PostService {
     //     console.log(err);
     //   },
     // };
-    this.http.post(`${this.baseUrl}/getpost`, this.searchData)
+    return await this.http.post(`${this.baseUrl}/getpost`, this.searchData)
     .toPromise()
     .then(res => this.listPosts = res as Post[]);
     // this.listPosts = Array(150).fill(0).map((x, i) => ({ id: (i), title: x.title,abstract: x.abstract, content: x.content, createDate: x.createDate, updateDate: x.updateDate,slug :x.slug,image:x.image,viewCount:x.viewCount,commentCount:x.commentCount,categoryid:x.categoryid,category:x.category}));
     // this.http.post(`${this.baseUrl}/getpost`, this.searchData).subscribe(postsObserver);
   }
-  onChangePage(pageOfItems: Array<any>) {
+  async onChangePage(pageOfItems: Array<any>) {
     // update current page of items
     this.pageOfItems = pageOfItems;
 }
-  getRandom4Posts(){
-    this.http.get(`${this.baseUrl}/getRandom4Posts`)
+  async getRandom4Posts(){
+    return await this.http.get(`${this.baseUrl}/getRandom4Posts`)
     .toPromise()
     .then(res => this.verticalPost = res as Post[]);
   }
 
-  postDetails(slug: any){
-    this.http.get(`${this.baseUrl}/postdetails/${slug}`)
+  async postDetails(slug: any){
+    return await this.http.get(`${this.baseUrl}/postdetails/${slug}`)
     .subscribe(res => this.postData = res as Post);
   }
 

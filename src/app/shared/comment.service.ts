@@ -16,16 +16,16 @@ export class CommentService {
   postformDataComment:PostComment = new PostComment();
   listComment: Comment[];
 
-  getComment(slug:any){
-    return this.http.get(`${this.baseUrl}/getComment/${slug}`)
+  async getComment(slug:any){
+    return await this.http.get(`${this.baseUrl}/getComment/${slug}`)
     .toPromise()
     .then(res => this.listComment = res as Comment[]);
   }
 
 
-  postComment(){
+  async postComment(){
     this.postformDataComment.userid = localStorage.getItem('userid');
  
-    return this.http.post(`${this.baseUrl}/postComment`, this.postformDataComment)
+    return await this.http.post(`${this.baseUrl}/postComment`, this.postformDataComment)
   }
 }
