@@ -50,28 +50,28 @@ export class CommentComponent implements OnInit {
     }
     // return !this.helper.isTokenExpired(token);
   }
-  onSubmit(form: NgForm){
+  async onSubmit(form: NgForm){
     this.service.postformDataComment.slug = this.activatedRoute.snapshot.paramMap.get('slug');
     this.service.postformDataComment.content = form.value.content; 
     // console.log(this.service.postformDataComment.content);
     if(form.value.content.length < 8){
       this.toastr.error('Please Enter At Least 8 character', 'Error');
     }else{
-      this.service.postComment().subscribe(
-        res => {
+      await (await this.service.postComment()).subscribe(
+        async res => {
           this.resetForm(form);
           this.toastr.success('Thank you for adding a comment <3!', 'Successfully Comment');
-          this.getComment();
+          await this.getComment();
           form.form.reset();
         },
-        err =>{this.toastr.error(err.error, 'Error');
+        async err =>{this.toastr.error(err.error, 'Error');
           console.log(err);}
       );
     }
   }
 
-  resetForm(form: NgForm){
-    form.form.reset;
+  async resetForm(form: NgForm){
+    await form.form.reset;
     this.service.postformDataComment = new PostComment();
   }
   
