@@ -1,0 +1,21 @@
+
+<aside class="ps-widget--sidebar">
+    <div class="ps-widget__header">
+    <h3>Recent Posts</h3>
+    </div>
+
+    <div *ngFor="let pd of service.verticalPost" class="ps-widget__content">
+        <div class="row mb-3">
+            <div class="col-2">
+                <a [routerLink]="['post', pd.slug]"><img class="img-fluid" src="{{pd.image}}" 
+                    style="width:70px;height:25.22px;" alt=""></a>
+            </div>
+            <div class="col">
+                <a class="ps-post__title" [routerLink]="['post', pd.slug]">{{pd.title}}</a>
+                <br>
+                <span style="font-size:11px">{{pd.createDate}}</span>
+            </div>
+        </div>
+
+    </div>
+</aside>

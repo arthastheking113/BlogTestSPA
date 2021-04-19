@@ -1,0 +1,198 @@
+/* You can add global styles to this file, and also import other style files */
+
+.ps-main {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+
+@media (min-width: 1200px)
+{
+    .ps-container {
+        width: 1170px;
+    }
+    
+}
+
+@media (min-width: 320px)
+{
+    .ps-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+.ps-post .ps-post__thumbnail {
+    position: relative;
+    margin-bottom: 10px;
+}
+.ps-morelink {
+    display: inline-block;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 16px!important;
+    font-weight: 700!important;
+    text-align: right!important;
+    color: #8d8d8d!important;
+    text-transform: uppercase!important;
+    line-height: 1.5em!important;
+    -webkit-transition: all 0.4s ease!important;
+    -moz-transition: all 0.4s ease!important;
+    transition: all 0.4s ease!important; }
+    .ps-morelink i {
+      vertical-align: center;
+      line-height: 26px!important;
+      margin-left: 5px!important;
+      -webkit-transition: all 0.4s ease!important;
+      -moz-transition: all 0.4s ease!important;
+      transition: all 0.4s ease!important; }
+    .ps-morelink:hover i {
+      margin-left: 10px!important; }
+  
+.ps-post .ps-post__thumbnail > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    z-index: 10;
+}
+
+.ps-post .ps-post__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.ps-post .ps-post__title {
+    margin-bottom: 5px;
+    display: block;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #5b5b5b;
+    text-transform: uppercase;
+    line-height: 1.3em;
+}
+
+.ps-post .ps-post__content p {
+    font-size: 14px;
+    line-height: 1.8em;
+    color: #8d8d8d;
+}
+
+.ps-post .ps-post__meta {
+    margin-bottom: 10px;
+}
+.ps-post .ps-post__meta > span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #8d8d8d;
+}
+
+.ps-post .ps-post__meta > span a {
+    margin-left: 5px;
+    color: #2AC37D;
+    font-weight: 500;
+}
+.ion-chatbox:before {
+    content: "\f11b";
+}
+
+.ps-post .ps-post__meta {
+    margin-bottom: 10px;
+}
+
+.ps-widget--sidebar .ps-widget__header {
+    margin-bottom: 25px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+
+.ps-footer {
+    position: relative; }
+    .ps-footer:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 0; }
+    .ps-footer__content {
+      padding: 100px 0; }
+    .ps-footer__copyright {
+      padding: 40px 0;
+      border-top: 1px solid #b3b3b3; }
+      .ps-footer__copyright p {
+        margin-bottom: 0;
+        font-family: "Archivo Narrow", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 25px;
+        letter-spacing: .05em; }
+        .ps-footer__copyright p a {
+          font-family: inherit;
+          font-weight: 700;
+          color: #2AC37D; }
+      .ps-footer__copyright .ps-social {
+        text-align: right; }
+    @media (max-width: 991px) {
+      .ps-footer__content {
+        padding-bottom: 10px; } }
+    @media (max-width: 767px) {
+      .ps-footer__copyright {
+        text-align: left; }
+        .ps-footer__copyright p {
+          margin-bottom: 15px; }
+        .ps-footer__copyright .ps-social {
+          display: inline-block; } }
+  
+
+
+
+
+          .ps-social li {
+            display: inline-block;
+            margin-right: 20px; }
+            .ps-social li a {
+              position: relative;
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              color: #999;
+              line-height: 25px; }
+              .ps-social li a > i.fa {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
+              .ps-social li a:hover {
+                color: #2AC37D; }
+          

@@ -1,0 +1,47 @@
+
+   <h4 *ngIf="!loggedIn()"  class="card-body text-center" 
+   style="border:1px solid rgb(28, 213, 219);">
+       <a  class="text-white btn btn-secondary" 
+       href="/login"
+        style="background-color:rgb(28, 213, 219);border:none;border-radius: 0;">
+           Login To Comment
+       </a>
+   </h4>
+  <div *ngIf="loggedIn()" class="card my-4" style="border:1px solid rgb(28, 213, 219);">
+    <h5 class="card-header">Leave a Comment:</h5>
+
+    <div class="card-body">
+        <div class="form-group">
+            <form novalidate autocomplete="off" #form="ngForm" (ngSubmit)="onSubmit(form)" class="ps-form--comment" >
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="form-group">
+                            <textarea id="content" rows="4"
+                            ngModel   
+                            name="content" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-secondary">Send Message <span class="iconify" data-icon="fa-solid:comment-alt" data-inline="true"></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="ps-comments">
+  <h3><i class="fa fa-comments"></i> Comment({{service.listComment.length}})</h3>
+  <div *ngFor="let pd of service.listComment" class="ps-comment">
+    <div class="ps-comment__thumbnail"><img class="img-fluid" src="{{pd.image}}" alt=""></div>
+   
+    <div class="ps-comment__content">
+    <header>
+      <h4>{{pd.name}} <span>{{pd.date}}</span></h4>
+    </header>
+    <div [innerHTML]="this.transformYourHtml(pd.content)" ></div>
+    </div>
+  </div>
+</div>
+

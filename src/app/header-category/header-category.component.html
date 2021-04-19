@@ -1,0 +1,16 @@
+<li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle  favorite-font" href="#" role="button"
+     id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false"><span class="iconify" data-icon="bx:bxs-category"
+       data-inline="true">
+      </span> Category</a>
+    <div class="dropdown-menu" style="background-color:#fff0;border:none;"
+     aria-labelledby="dropdownMenuLink1">
+        <a type="button" *ngFor="let pd of service.list"
+         class="dropdown-item dropdown-item-transparent favorite-font" 
+          (click)="gotoCategory(pd.id)" >{{pd.name}}</a>
+          <a type="button"
+          class="dropdown-item dropdown-item-transparent favorite-font" 
+          (click)="getAll()" >View All</a>
+    </div>
+</li>

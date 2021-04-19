@@ -1,0 +1,13 @@
+<aside class="ps-widget--sidebar">
+    <div class="ps-widget__header">
+    <h3>Category</h3>
+    </div>
+    <div class="ps-widget__content">
+    <ul >
+        <li *ngFor="let pd of service.list"
+         class="mt-1" ><a style="color: rgb(85, 85, 85);margin-left:25px"
+        type="button" (click)="gotoCategory(pd.id)"> {{pd.name}}</a></li>
+
+    </ul>
+    </div>
+</aside>

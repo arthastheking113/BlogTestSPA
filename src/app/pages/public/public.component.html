@@ -1,0 +1,23 @@
+<div class="jumbotron mt-4">
+	<div class="row">
+        <div class="col text-center">
+            <h1> Welcome To Online Contact Book</h1>
+            <p>You can manage, view, create, edit, and delete your contact online and free in our website.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+			<a class="btn btn-secondary text-white" style="border-radius:0;border:none;background-color:#1cd5db; margin-right: 1%;"
+			[routerLink]="['login']" 
+		routerLinkActive="active">
+		<i class="fas fa-sign-in-alt"></i> Login To Add Contact</a>
+		
+		<a class="btn btn-secondary text-white" style="border-radius:0;border:none;background-color:#1cd5db"
+		[routerLink]="['register']" 
+		routerLinkActive="active">
+		<i class="fas fa-user-plus"></i> Register a New Account</a>
+
+        </div>
+    </div>
+</div>

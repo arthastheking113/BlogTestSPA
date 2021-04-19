@@ -1,0 +1,68 @@
+<div >
+    <header class="masthead" style="background-image: url('{{this.service.postData.image}}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading" style="font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                        <h1 style="color:white;">{{this.service.postData.title}}</h1>
+                        <span class="meta">
+                            Posted by
+                            <a href="#">Duy Lan Le</a>
+                            on {{this.service.postData.createDate}} in 
+                            <span class="ion-pricetag"></span><b>
+                              <a >{{this.service.postData.category}}</a></b>
+    
+                        </span>
+                        <span class="meta">Edited on {{this.service.postData.updateDate}}</span>
+                        <p>
+                            <span class="text-white" 
+                            style="padding-right:2%"> <span class="iconify" data-icon="bx:bxs-message" data-inline="true"></span>
+                            {{this.service.postData.commentCount}} </span>
+                             <span class="text-white">
+                                 <span class="iconify text-white" 
+                                 data-icon="carbon:view-filled" data-inline="true">
+                                 </span> {{this.service.postData.viewCount}} Views</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ps-main">
+        <div class="ps-blog-grid pt-80 pb-80">
+          <div class="ps-container">
+            <div class="row">
+                  <div class="col-lg-9">
+                    <div class="ps-post--detail">
+                      <div class="ps-post__content img-fluid">
+                        <div [innerHTML]="this.transformYourHtml(this.service.postData.content)" ></div>
+                      </div>
+                      <div class="ps-post__footer">
+                        <p class="ps-post__tags"><i class="fa fa-tags"></i><a href="blog-list.html">{{this.service.postData.category}}</a></p>
+                        <div class="ps-post__actions"><span>
+                            <i class="fa fa-comments"></i> {{this.service.postData.commentCount}} Comments</span><span></span>
+                        </div>
+                      </div>
+                    </div>
+    
+    
+                  
+    
+                   
+    
+             
+                    <app-comment></app-comment>
+                    
+                  </div>
+                  <div class="col-lg-3">
+                    <app-vertical-side-bar></app-vertical-side-bar>
+                  </div>
+            </div>
+          </div>
+        </div>
+       
+      </main>
+</div>
+
+

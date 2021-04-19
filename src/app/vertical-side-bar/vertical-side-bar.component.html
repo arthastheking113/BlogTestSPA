@@ -1,0 +1,73 @@
+
+<aside class="ps-widget--sidebar ps-widget--search">
+    <form class="ps-search--widget" novalidate autocomplete="off" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" >
+        <div class="input-group">
+            <input type="text" ngModel   
+            name="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+            <div class="input-group-append">
+            <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        </div>
+    </form>
+</aside>
+
+<app-vertical-side-bar-category></app-vertical-side-bar-category>
+
+
+<hr>
+
+
+<app-vertical-side-bar-recent-post></app-vertical-side-bar-recent-post>
+
+
+
+<hr>
+<aside class="ps-widget--sidebar">
+    <div class="row">
+        <h5>About this page and me?</h5>
+    </div>
+    <div class="row">
+        <div class="row mt-3">
+            <p class="big-text">
+                <a >
+                    <span class="iconify" data-icon="akar-icons:more-horizontal" data-inline="true"></span> 
+                    About
+                </a>
+            </p>
+        </div>
+        <div class="row">
+            <p class="big-text">
+                <a >
+                    <span class="iconify" data-icon="bx:bxs-phone-call" data-inline="true"></span>
+                        Contact
+                    </a>
+                </p>
+        </div>
+        <div class="row">
+            <p class="big-text">
+                <a  target="_blank" href="https://duylanle-portfolio.netlify.app/">
+                    <span class="iconify" data-icon="dashicons:portfolio" data-inline="true"></span> 
+                    My Portfolio
+                </a>
+            </p>
+        </div>
+        <div class="row">
+            <p class="big-text">
+                <a  target="_blank" href="https://github.com/arthastheking113/">
+                <span class="iconify" data-icon="akar-icons:github-fill" data-inline="true"></span> 
+                Github
+            </a>
+        </p>
+        </div>
+        <div class="row">
+            <p class="big-text">
+                <a  target="_blank" href="https://www.linkedin.com/in/duy-lan-le-445262163/">
+                    <span class="iconify" data-icon="akar-icons:linkedin-fill" data-inline="true"></span> 
+                    Linkedin
+                </a>
+            </p>
+        </div>
+    </div>
+</aside>

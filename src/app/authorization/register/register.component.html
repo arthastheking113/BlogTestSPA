@@ -1,0 +1,90 @@
+<header class="masthead" style="background-color:#1cd5db;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto" style="font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                <div class="site-heading" style="padding: 28px 0;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<br />
+<br />
+<div class="row">
+	<div class="col-md-2 offset-md-5 mt-4">
+		<div class="row  text-center" >
+			<div class="col" style="border-right:1px solid">
+				<a [routerLink]="['/login']" 
+				routerLinkActive="active"><h3>Login</h3></a>
+			</div>
+			<div class="col">
+				<a [routerLink]="['/register']" 
+				routerLinkActive="active"><h3>Register</h3></a>
+				
+			</div>
+		</div>
+		<hr>
+		<form #f="ngForm" (ngSubmit)="onSubmit()">
+			<div class="row">
+				<div class="form-group col-6" >
+					<label>First Name</label>
+					<input type="text" class="form-control"
+					name="firstName" #firstName="ngModel" 
+					[(ngModel)]="model.firstName">
+				</div>
+		
+				<div class="form-group col-6" >
+					<label>Last Name</label>
+					<input type="text" class="form-control"
+					name="lastName" #lastName="ngModel" 
+					[(ngModel)]="model.lastName">
+				</div>
+			</div> 
+			<div class="form-group">
+				<label for="registerEmail">Email</label>
+				<input type="email" name="email" 
+				[(ngModel)]="model.email" required 
+				#email="ngModel" class="form-control" id="registerEmail"
+					   placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="registerPassword">Password</label>
+				<input type="password" name="password" 
+				[(ngModel)]="model.password" required 
+				#password="ngModel" class="form-control"
+					   id="registerPassword" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="registerPassword">Confirm Password</label>
+				<input type="password" name="confirmpassword" 
+				[(ngModel)]="model.confirmpassword" required 
+				#confirmpassword="ngModel" class="form-control"
+					   id="registerconfirmpassword" placeholder="Password">
+			</div>
+			
+			<br>
+			<button type="submit" 
+			[disabled]="f.invalid" 
+			class="btn btn-primary form-control">Register 
+			<i class="fas fa-sign-in-alt"></i></button>
+		</form>
+	</div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /><br />
+<br /><br />
+<br />
+<br />
+<br />

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lan's Blog</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png"  href="favicon.ico" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/a84f712cbb.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+</head>
+<body>
+  <style>
+    
+/*------/ Prelaoder /------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #1cd5db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+  }
+  
+  @-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes example12 {
+    0%   {background-color:red; background-size: 5%;}
+    25%  {background-color:yellow; background-size: 10%;}
+    50%  {background-color:blue; background-size: 20%;}
+    75%  {background-color:green; background-size: 30%;}
+    100% {background-color:red; background-size: 40%;}
+  }
+
+  
+.center {
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    top: 55%;
+}
+
+.ps-footer {
+  position: relative; }
+  .ps-footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 0; }
+  .ps-footer__content {
+    padding: 0 0; }
+  .ps-footer__copyright {
+    padding: 29px 0;
+    border-top: 1px solid #b3b3b3; }
+    .ps-footer__copyright p {
+      margin-bottom: 0;
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #999999;
+      line-height: 25px;
+      letter-spacing: .05em; }
+      .ps-footer__copyright p a {
+        font-family: inherit;
+        font-weight: 700;
+        color: #2AC37D; }
+    .ps-footer__copyright .ps-social {
+      text-align: right; }
+  @media (max-width: 991px) {
+    .ps-footer__content {
+      padding-bottom: 10px; } }
+  @media (max-width: 767px) {
+    .ps-footer__copyright {
+      text-align: left; }
+      .ps-footer__copyright p {
+        margin-bottom: 15px; }
+      .ps-footer__copyright .ps-social {
+        display: inline-block; } }
+
+.footer {
+  background-color: orange;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+  </style>
+  <div id="preloader">
+    <div class="center">
+        <p style="text-align: center;font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border-radius: 0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+            Just A Second, I'm Loading...
+        </p>
+    </div>
+</div>
+  <script>
+     (function ($) {
+      "use strict";
+      // Preloader
+      $(window).on('load', function () {
+          if ($('#preloader').length) {
+              $('#preloader').delay(350).fadeOut('slow', function () {
+                  $(this).remove();
+              });
+          }
+      });
+    })(jQuery);
+  </script>
+
+  <app-root></app-root>
+
+
+  <div class="footer bg-dark" data-background="assets/images/background/parallax.jpg">
+    <div class="ps-footer__copyright">
+        <div class="ps-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>&copy; <a href="https://duylanle-portfolio.netlify.app/" target="_blank">Lan's Blog</a>, Inc. All rights Resevered. Design by <a href="https://duylanle-portfolio.netlify.app/" target="_blank"> Duy Lan Le</a></p>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="ps-social">
+                        <li><a href="https://www.linkedin.com/in/duy-lan-le-445262163/" target="_blank" class="text-white"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="true"></span></a></li>
+                        <li><a href="https://github.com/arthastheking113" target="_blank" class="text-white"><span class="iconify" data-icon="akar-icons:linkedin-fill" data-inline="true"></span></a></li>
+                        <li><a href="https://duylanle-portfolio.netlify.app/" target="_blank"><span class="iconify" data-icon="ant-design:folder-filled" data-inline="true"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

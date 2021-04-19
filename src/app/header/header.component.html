@@ -1,0 +1,53 @@
+<ng-progress id="progressBar" 
+	[thick]="true" [color]="progressBar.currentColor"></ng-progress>
+<ngx-alerts></ngx-alerts> 
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	<div class="container">
+		<a class="navbar-brand" type="button"  (click)="getAll()"
+		routerLinkActive="router-link-active">
+		Lan's Blog</a>
+		<button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+		<div  
+		class="navbar-collapse collapse " id="navbarResponsive"
+        [ngClass]="{ show: isExpanded }" >
+			<ul class="navbar-nav" style="margin-right: auto;">
+				<li class="nav-item" *ngIf="isAdmin()">
+					<a class="nav-link" [routerLink]="['admin']" 
+					routerLinkActive="active">
+					<i class="fas fa-user-shield"></i> Admin</a>
+				</li>
+				<li class="nav-item" *ngIf="isManager()">
+					<a class="nav-link" [routerLink]="['manager']" 
+					routerLinkActive="Manager">
+					<i class="fas fa-user-cog"></i> Manager</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" type="button"  (click)="getAll()"
+					 routerLinkActive="router-link-active">
+					 <i class="fas fa-home"></i> Home</a>
+				</li>
+				<app-header-category></app-header-category>
+				<li class="nav-item">
+					<a class="nav-link" routerLinkActive="active" [routerLink]="['about']" ><span class="iconify" data-icon="akar-icons:more-horizontal" data-inline="true"></span> About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLinkActive="active" [routerLink]="['contact']"><span class="iconify" data-icon="bx:bxs-phone-call" data-inline="true"></span> Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://duylanle-portfolio.netlify.app/"><span class="iconify" data-icon="dashicons:portfolio" data-inline="true"></span> My Portfolio</a>
+				</li>
+			</ul>
+			<app-auth-links style="margin-left: auto;"></app-auth-links>
+		</div>
+	</div>
+</nav>
