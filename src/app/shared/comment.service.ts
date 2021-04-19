@@ -11,7 +11,7 @@ export class CommentService {
 
   constructor(private http: HttpClient,
     private activatedRoute: ActivatedRoute,) { }
-  readonly baseUrl = 'https://localhost:44368/Comment';
+  readonly baseUrl = 'https://duylanle-blog.herokuapp.com/Comment';
   formDataComment:Comment = new Comment();
   postformDataComment:PostComment = new PostComment();
   listComment: Comment[];

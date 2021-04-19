@@ -8,7 +8,7 @@ import {Category} from './category.model'
 export class CategoryService {
 
   constructor(private http: HttpClient) { }
-  readonly baseUrl = 'https://localhost:44368/Category';
+  readonly baseUrl = 'https://duylanle-blog.herokuapp.com/Category';
 
   list:Category[];
   getCategory(){

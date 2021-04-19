@@ -12,7 +12,7 @@ export class PostService {
   
   constructor(private http: HttpClient) { }
   
-  readonly baseUrl = 'https://localhost:44368/Post';
+  readonly baseUrl = 'https://duylanle-blog.herokuapp.com/Post';
   postData:Post = new Post();
   listPosts:Post[] = new Array().fill(0).map((x, i) => ({ id: (i), title: x.title,abstract: x.abstract, content: x.content, createDate: x.createDate, updateDate: x.updateDate,slug :x.slug,image:x.image,viewCount:x.viewCount,commentCount:x.commentCount,categoryid:x.categoryid,category:x.category}));
   verticalPost:Post[];
