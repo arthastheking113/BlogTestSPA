@@ -21,19 +21,19 @@ export class PostService {
 
   
   getpost(){
-    const postsObserver = {
-      next: (x: any) => {
-        this.listPosts = x;
-      },
-      error: (err: any) => {
-        console.log(err);
-      },
-    };
-    // this.http.post(`${this.baseUrl}/getpost`, this.searchData)
-    // .toPromise()
-    // .then(res => this.listPosts = res as Post[]);
+    // const postsObserver = {
+    //   next: (x: any) => {
+    //     this.listPosts = x;
+    //   },
+    //   error: (err: any) => {
+    //     console.log(err);
+    //   },
+    // };
+    this.http.post(`${this.baseUrl}/getpost`, this.searchData)
+    .toPromise()
+    .then(res => this.listPosts = res as Post[]);
     // this.listPosts = Array(150).fill(0).map((x, i) => ({ id: (i), title: x.title,abstract: x.abstract, content: x.content, createDate: x.createDate, updateDate: x.updateDate,slug :x.slug,image:x.image,viewCount:x.viewCount,commentCount:x.commentCount,categoryid:x.categoryid,category:x.category}));
-    this.http.post(`${this.baseUrl}/getpost`, this.searchData).subscribe(postsObserver);
+    // this.http.post(`${this.baseUrl}/getpost`, this.searchData).subscribe(postsObserver);
   }
   onChangePage(pageOfItems: Array<any>) {
     // update current page of items
