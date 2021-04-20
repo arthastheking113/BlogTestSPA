@@ -24,11 +24,7 @@ export class ListOfPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getpost();
-    this.items = this.service.listPosts;
   }
   
-  onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
-    this.pageOfItems = pageOfItems;
-}
+
 }

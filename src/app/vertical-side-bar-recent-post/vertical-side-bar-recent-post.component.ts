@@ -11,14 +11,13 @@ import { PostService } from '../shared/post.service';
   styleUrls: ['./vertical-side-bar-recent-post.component.css']
 })
 export class VerticalSideBarRecentPostComponent implements OnInit {
-
+  list:any[];
   constructor(public service: PostService,
     authService: AuthService,
      router: Router,
      private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.service.getRandom4Posts();
   }
 
 }

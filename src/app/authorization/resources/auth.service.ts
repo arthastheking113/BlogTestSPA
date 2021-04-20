@@ -20,7 +20,7 @@ const routes: Routes = [
 })
 
 export class AuthService {
-  baseUrl: string = 'https://duylanle-blog.herokuapp.com/';
+  baseUrl: string = `${environment.baseUrl}/`;
   isLoggedIn:boolean;
   helper = new JwtHelperService();
 

@@ -19,12 +19,13 @@ export class VerticalSideBarCategoryComponent implements OnInit {
      private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getCategory();
+   
   }
   gotoCategory(id: any){
     this.PostService.searchData.categoryids = id;
     localStorage.setItem('categoryids', id);
     this.router.navigate(['']);
     this.PostService.getpost();
+    // this.PostService.pageOfItems.filter(x => x.categoryid == id);
   }
 }

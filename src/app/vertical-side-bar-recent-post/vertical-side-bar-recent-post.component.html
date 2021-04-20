@@ -4,7 +4,7 @@
     <h3>Recent Posts</h3>
     </div>
 
-    <div *ngFor="let pd of service.verticalPost" class="ps-widget__content">
+    <div *ngFor="let pd of service.shuffleVerticalPost(service.listPosts)" class="ps-widget__content">
         <div class="row mb-3">
             <div class="col-2">
                 <a [routerLink]="['post', pd.slug]"><img class="img-fluid" src="{{pd.image}}" 

@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Comment, PostComment} from './comment.model'
 import { NgForm } from '@angular/forms';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-
+import {environment} from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class CommentService {
 
   constructor(private http: HttpClient,
     private activatedRoute: ActivatedRoute,) { }
-  readonly baseUrl = 'https://duylanle-blog.herokuapp.com/Comment';
+  readonly baseUrl = `${environment.baseUrl}/Comment`;
   formDataComment:Comment = new Comment();
   postformDataComment:PostComment = new PostComment();
   listComment: Comment[];
