@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  baseUrl: 'http://duylanle-blog.herokuapp.com',
+  baseUrl: 'https://duylanle-blog.herokuapp.com',
 };
 
 /*
