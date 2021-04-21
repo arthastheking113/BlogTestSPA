@@ -16,9 +16,22 @@ export class CategoryService {
 
   list:Category[];
   async getCategory(){
+    const categoryObserver = {
+      next: (x: any) => {
+        this.progressService.setSuccess();
+        this.list = x as Category[];  
+        this.progressService.completeLoading();
+      },
+      error: (err: any) => {
+        this.progressService.setFailure();
+       
+        console.log(err);
+        this.alertService.danger(err.error);
+        this.progressService.completeLoading();
+      },
+    };
     return await this.http.get(`${this.baseUrl}/getcategory`)
-    .toPromise()
-    .then(res => this.list = res as Category[]);
+    .subscribe(categoryObserver)
   }
 
   async getCategoryPost(){
