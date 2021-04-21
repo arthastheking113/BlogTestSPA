@@ -18,7 +18,7 @@ export class PostService {
   
   readonly baseUrl = `${environment.baseUrl}/Post`;
   postData:Post | any= new Post();
-  listPosts:Post[] = new Array().fill(0).map((x, i) => ({ id: (i), title: x.title,abstract: x.abstract, content: x.content, createDate: x.createDate, updateDate: x.updateDate,slug :x.slug,image:x.image,viewCount:x.viewCount,commentCount:x.commentCount,categoryid:x.categoryid,category:x.category}));
+  listPosts:Post[] = new Array().fill(0).map((x) => ({ id: x.id, title: x.title,abstract: x.abstract, content: x.content, createDate: x.createDate, updateDate: x.updateDate,slug :x.slug,image:x.image,viewCount:x.viewCount,commentCount:x.commentCount,categoryid:x.categoryid,category:x.category}));
   verticalPost:Post[];
   searchData:Search = new Search();
   pageOfItems: Array<any>;
@@ -52,20 +52,7 @@ export class PostService {
     return this.verticalPost = this.pageOfItems as Post[];
   }
   shuffle(array: any) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
+    
   
     return array;
   }
@@ -88,9 +75,11 @@ export class PostService {
     return array.slice(0,4);
   }
   async postDetails(slug: any){
-    // return await this.http.get(`${this.baseUrl}/postdetails/${slug}`)
-    // .subscribe(res => this.postData = res as Post);
-
+    if(this.listPosts.length == 0){
+      return await this.http.get(`${this.baseUrl}/postdetails/${slug}`)
+        .subscribe(res => this.postData = res as Post);
+    }
+    await this.http.get(`${this.baseUrl}/postdetailsViewIncrease/${slug}`).subscribe();
     return this.postData =  this.listPosts.find(x => x.slug == slug);
   }
 

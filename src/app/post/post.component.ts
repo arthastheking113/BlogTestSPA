@@ -34,7 +34,6 @@ export class PostComponent implements OnInit {
       tabDisable: true,
       dialogsInBody: true
   });
-
   }
   IsLoading(){
     this.Loading = true;

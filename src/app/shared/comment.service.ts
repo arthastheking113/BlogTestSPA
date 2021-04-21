@@ -14,12 +14,12 @@ export class CommentService {
   readonly baseUrl = `${environment.baseUrl}/Comment`;
   formDataComment:Comment = new Comment();
   postformDataComment:PostComment = new PostComment();
-  listComment: Comment[];
+  listComment: Comment[] | any;
 
   async getComment(slug:any){
     return await this.http.get(`${this.baseUrl}/getComment/${slug}`)
     .toPromise()
-    .then(res => this.listComment = res as Comment[]);
+    .then(res => this.listComment = res as Comment[] | any);
   }
 
 
