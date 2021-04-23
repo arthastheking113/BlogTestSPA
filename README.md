@@ -1,27 +1,15 @@
-# TestWebApp
+# Build a Blog using ASP .NET MVC C#
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+A blog is a discussion or informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order, so that the most recent post appears first, at the top of the web page.
 
-## Development server
+Blog project is one of my very first project to get used to work with Angular and ASP .NET MVC C#.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The technologies I used in this project is: ASP .NET MVC C# (Entity Framework) as back-end. HTML, CSS, JavaScript, jQuery, Angular as front-end. And, PostgresSQL as my data base.
 
-## Code scaffolding
+In my blog project, it has authorization, authendication, and security. I'm the only person can write a blog's post on my website. The other users can read without login but they have to login to write comment, change their name, phone number, email address, password, or upload their avatar image.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After all, this is not a hard project, but at the time working on it, I learned and improve a lot of skills. If you want to visit and have a quick look at it.
 
-## Build
+This is the link to my personal blog: https://duylanle-blog.netlify.app/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Notes: My personal blog is hosted on a free Heroku server, so, It will take a minute to boot up.
