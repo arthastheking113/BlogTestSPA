@@ -21,10 +21,12 @@ export class CommentService {
   listComment: Comment[] | any;
 
   async getComment(slug:any){
+    this.alertService.info("I'm getting comments");
     const commentObserver = {
       next: (x: any) => {
         this.progressService.setSuccess();
         this.listComment = x as Comment[];
+        this.alertService.success("I got your comments");
         this.progressService.completeLoading();
       },
       error: (err: any) => {
@@ -41,8 +43,9 @@ export class CommentService {
 
 
   async postComment(){
+
     this.postformDataComment.userid = localStorage.getItem('userid');
  
-    return await this.http.post(`${this.baseUrl}/postComment`, this.postformDataComment)
+    return await this.http.post(`${this.baseUrl}/postComment`, this.postformDataComment);
   }
 }

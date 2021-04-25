@@ -35,7 +35,7 @@ export class CommentComponent implements OnInit {
   }
 
   getComment(){
-   this.service.getComment(this.slug)
+   this.service.getComment(this.slug);
   }
   transformYourHtml(htmlTextWithStyle:any) {
     return this.sanitizer.bypassSecurityTrustHtml(htmlTextWithStyle);

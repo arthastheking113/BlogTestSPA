@@ -25,6 +25,8 @@ export class PostService {
 
   
   async getpost(){
+    this.progressService.startLoading();
+    this.alertService.info('Getting Posts');
     const getPostsObserver = {
       next: (x: any) => {
         this.progressService.setSuccess();
@@ -75,11 +77,46 @@ export class PostService {
     return array.slice(0,4);
   }
   async postDetails(slug: any){
+    this.progressService.startLoading();
+    this.alertService.info('Getting Post Details');
     if(this.listPosts.length == 0){
+    
+      const getPostsDetailsObserver = {
+        next: (x: any) => {
+          this.progressService.setSuccess();
+
+          this.postData = x as Post
+          
+          this.progressService.completeLoading();
+  
+        },
+        error: (err: any) => {
+          this.progressService.setFailure();
+         
+          console.log(err);
+          this.alertService.danger(err.error);
+          this.progressService.completeLoading();
+        },
+      };
       return await this.http.get(`${this.baseUrl}/postdetails/${slug}`)
-        .subscribe(res => this.postData = res as Post);
+        .subscribe(getPostsDetailsObserver);
     }
-    await this.http.get(`${this.baseUrl}/postdetailsViewIncrease/${slug}`).subscribe();
+    const getPostsDetailsObserver = {
+      next: (x: any) => {
+        this.progressService.setSuccess();
+        
+        this.progressService.completeLoading();
+
+      },
+      error: (err: any) => {
+        this.progressService.setFailure();
+       
+        console.log(err);
+        this.alertService.danger(err.error);
+        this.progressService.completeLoading();
+      },
+    };
+    await this.http.get(`${this.baseUrl}/postdetailsViewIncrease/${slug}`).subscribe(getPostsDetailsObserver);
     return this.postData =  this.listPosts.find(x => x.slug == slug);
   }
 
