@@ -117,7 +117,10 @@ export class PostService {
       },
     };
     await this.http.get(`${this.baseUrl}/postdetailsViewIncrease/${slug}`).subscribe(getPostsDetailsObserver);
-    return this.postData =  this.listPosts.find(x => x.slug == slug);
+    this.postData =  this.listPosts.find(x => x.slug == slug);
+    var viewCount = (Number(`${this.postData.viewCount}`) + 1).toString();
+    this.postData.viewCount = viewCount;
+    return this.postData;
   }
 
 }
